@@ -28,11 +28,11 @@ import org.json.JSONObject;
  *
  * @author groov
  */
-public class StartJourneyIntentHandler implements RequestHandler {
+public class StopJourneyIntentHandler implements RequestHandler {
 
     @Override
     public boolean canHandle(HandlerInput input) {
-        return input.matches(Predicates.intentName("StartJourneyIntent"));
+        return input.matches(Predicates.intentName("StopJourneyIntent"));
     }
 
     @Override
@@ -63,13 +63,14 @@ public class StartJourneyIntentHandler implements RequestHandler {
             System.out.println("Unable to access Alexa User Token");
         }
         
-        try {
-            ManageJourneyClientUtil.changeUserStatus(email, "activate");
+        //Set user active to periodically log user's location
+          try {
+            ManageJourneyClientUtil.changeUserStatus(email, "deactivate");
         } catch (Exception e) {
             e.printStackTrace();
         }
         
-        String speechText = "Starting your journey Logging Now, "+name;
+        String speechText = "Stopping your journey Logging now "+name;
         return input.getResponseBuilder()
                 .withSpeech(speechText)
                 .withSimpleCard("HelloWorld", speechText)

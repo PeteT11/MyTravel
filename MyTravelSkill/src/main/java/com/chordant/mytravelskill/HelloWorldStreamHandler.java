@@ -13,6 +13,7 @@ import com.chordant.mytravel.handlers.HelpIntentHandler;
 import com.chordant.mytravel.handlers.LaunchRequestHandler;
 import com.chordant.mytravel.handlers.SessionEndedRequestHandler;
 import com.chordant.mytravelskill.handlers.StartJourneyIntentHandler;
+import com.chordant.mytravelskill.handlers.StopJourneyIntentHandler;
 
 public class HelloWorldStreamHandler extends SkillStreamHandler {
 
@@ -21,6 +22,7 @@ public class HelloWorldStreamHandler extends SkillStreamHandler {
                 .addRequestHandlers(
                         new CancelandStopIntentHandler(),
                         new StartJourneyIntentHandler(),
+                        new StopJourneyIntentHandler(),
                         new HelpIntentHandler(),
                         new LaunchRequestHandler(),
                         new SessionEndedRequestHandler())
