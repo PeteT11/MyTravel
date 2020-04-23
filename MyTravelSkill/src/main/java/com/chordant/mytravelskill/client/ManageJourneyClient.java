@@ -21,7 +21,7 @@ import java.io.IOException;
 
 public class ManageJourneyClient {
 
-    String JOURNEY_URL = "http://90.255.64.249:8084/MyTravel/rest/journey";
+    String JOURNEY_URL = "https://www.mobeality.com/MyTravel/rest/journey";
 
     String EMAIL = "peter.thompson@touchtechconsulting.com";
 

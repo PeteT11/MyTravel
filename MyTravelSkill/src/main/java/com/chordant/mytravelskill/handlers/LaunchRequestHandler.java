@@ -27,7 +27,7 @@ public class LaunchRequestHandler implements RequestHandler {
 
     @Override
     public Optional<Response> handle(HandlerInput input) {
-        String speechText = "Welcome to Voice Travel Services Powered By Chordant. You can say Start Journey";
+        String speechText = "Welcome to Voice Travel Services Powered By Chordant. You can say Start My Journey or Stop My Journey";
         return input.getResponseBuilder()
                 .withSpeech(speechText)
                 .withSimpleCard("HelloWorld", speechText)
